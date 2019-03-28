@@ -1,0 +1,9 @@
+package com.revature.ers.dao;
+
+public class ReimbursementTypeDAO {
+
+	private short reimbursementTypeId;
+	private String reimbursementType;
+	
+	
+}

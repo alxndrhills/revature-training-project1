@@ -1,0 +1,24 @@
+package com.revature.ers.dao;
+
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+
+public class ReimbursementDAO {
+
+	private int reimbursementId;
+	private BigDecimal amount;
+	private Timestamp reimbursementSubmitted;
+	private Timestamp reimbursementResolved;
+	private String reimbursementDescription;
+	private byte[] reimbursementReceipt;
+	private int reimbursementAuthorId;
+	private int reimbursementResolverId;
+	private short reimbursementStatusId;
+	private short reimbursementTypeId;
+	private UserDAO reimbursementAuthor;
+	private UserDAO reimbursementResolver;
+	private ReimbursementStatusDAO reimbursementStatus;
+	private ReimbursementTypeDAO reimbursementType;
+	
+	
+}

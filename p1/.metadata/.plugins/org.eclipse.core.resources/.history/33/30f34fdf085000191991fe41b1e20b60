@@ -1,0 +1,23 @@
+package com.revature.ers.dao;
+
+public class ReimbursementStatusDAO {
+
+	private short reimbursementStatusId;
+	private String reimbursementStatus;
+	
+	public short getReimbursementStatusId() {
+		return reimbursementStatusId;
+	}
+	
+	public void setReimbursementStatusId(short reimbursementStatusId) {
+		this.reimbursementStatusId = reimbursementStatusId;
+	}
+	
+	public String getReimbursementStatus() {
+		return reimbursementStatus;
+	}
+	
+	public void setReimbursementStatus(String reimbursementStatus) {
+		this.reimbursementStatus = reimbursementStatus;
+	}
+}

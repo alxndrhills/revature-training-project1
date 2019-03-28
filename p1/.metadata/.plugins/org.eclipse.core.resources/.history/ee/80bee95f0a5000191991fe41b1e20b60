@@ -1,0 +1,12 @@
+package com.revature.dao;
+
+import java.util.List;
+
+import com.revature.data.ReimbursementStatus;
+
+public class ReimbursementStatusDAO {
+
+	public List<ReimbursementStatus> reimbursementStatusList =
+			new ArrayList<ReimbursementStatus>
+	
+}

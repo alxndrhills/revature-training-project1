@@ -1,0 +1,38 @@
+package com.revature.util;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Properties;
+
+public class ConnectionFactory {
+	
+	public Connection getConnection() {
+		
+		Connection connection = null;
+		Properties properties = new Properties();
+		String path = "src/main/resources/database.properties";
+		
+			try {
+				properties.load(new FileReader(path));
+				//the following line of code uses reflection and the 
+				// .properties file in order to instantiate our driver
+				//  class listed in the file
+				Class.forName(properties.getProperty("driver"));
+			
+				connection = DriverManager.getConnection(
+						properties.getProperty("url"), 
+						properties.getProperty("username"), 
+						properties.getProperty("password"));
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		return connection;
+}
+}
