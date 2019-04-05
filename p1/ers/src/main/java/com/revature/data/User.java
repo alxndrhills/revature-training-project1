@@ -9,9 +9,22 @@ public class User {
 	private String lastName;
 	private String email;
 	private short userRoleId;
-	private UserRoleDAO userRole;
+	private String userRole;
 	
+	public User() {}
 	
+	public User(int userId, String username, String password, String firstName, String lastName, String email,
+			short userRoleId, String userRole) {
+		this.userId = userId;
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.userRoleId = userRoleId;
+		this.userRole = userRole;
+	}
+
 	public int getUserId() {
 		return userId;
 	}
@@ -68,11 +81,11 @@ public class User {
 		this.userRoleId = userRoleId;
 	}
 
-	public UserRoleDAO getUserRole() {
+	public String getUserRole() {
 		return userRole;
 	}
 
-	public void setUserRole(UserRoleDAO userRole) {
+	public void setUserRole(String userRole) {
 		this.userRole = userRole;
 	}
 	

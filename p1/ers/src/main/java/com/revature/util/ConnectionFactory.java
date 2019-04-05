@@ -18,16 +18,18 @@ public class ConnectionFactory {
 			if(CONNECTION_FACTORY == null) CONNECTION_FACTORY = 
 					new ConnectionFactory();
 			return CONNECTION_FACTORY;
-}
+	}
 
 	public Connection getConnection() {
 
 		Connection connection = null;
 		Properties properties = new Properties();
-		String path = "src/main/resources/database.properties";
+		String path = "database.properties";
 
 		try {
-			properties.load(new FileReader(path));
+			ClassLoader loader = Thread.currentThread().getContextClassLoader();
+			properties.load(loader.getResourceAsStream(path));
+		
 			Class.forName(properties.getProperty("driver"));
 
 			connection = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("username"),
