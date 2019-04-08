@@ -133,12 +133,17 @@ function createReimbursement() {
 			if (xhr.readyState == 4) {
 				if (xhr.status == 200) {
 					showAlert("Request submitted successfully");
-					$('#ReimbursementDetailSection').modal('hide');
 					refreshList();
 				}
 				else {
 					$('#formMessage').html("Error submitting request");
+					
 				}
+				$('#reimbursementType').val("");
+				$('#reimbursementDescription').val("");
+				$('#reimbursementAmount').val("");
+				$('#ReimbursementDetailSection').modal('hide');
+				$('#formMessage').html("");
 			}
 		}
 		xhr.open("POST", "reimbursements");
